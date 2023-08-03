@@ -16,5 +16,6 @@ interpreter_constraints = ["CPython==3.10.*"]
 env_vars = ["DOCKER_DEFAULT_PLATFORM=linux/amd64"]
 
 [environments-preview.names]
+any = "//:any"
 linux_x86 = "//:linux_x86"
 docker = "//:docker"

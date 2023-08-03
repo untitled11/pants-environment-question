@@ -1,6 +1,6 @@
 FROM python:3.10-buster as builder
 WORKDIR /usr/src/app
-COPY cli.pex cli.pex
+COPY cli@environment=linux_x86.pex cli.pex
 
 RUN mkdir bin
 RUN PEX_TOOLS=1 python cli.pex venv --compile ./bin/cli

@@ -1,0 +1,74 @@
+11:18:37.79 [31m[ERROR][0m 1 Exception encountered:
+
+Engine traceback:
+  in `package` goal
+
+ProcessExecutionFailure: Process 'Building docker image docker0:latest' failed with exit code 1.
+stdout:
+
+stderr:
+#1 [internal] load build definition from Dockerfile
+#1 sha256:5eb1e9b376df833c3cb7da81a84545e1b1be9b1c3eb7fd5e7639b88dfb173feb
+#1 transferring dockerfile: 302B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:b6e2d45b8335c73ba151d4d9de4606ab0ab81f4efeae04c464d22266cbe67bfb
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.10-buster
+#3 sha256:1d2091e515d218b490d8382f039382c02fdbeb7eb1df50cbd468b5d049e97bd2
+#3 DONE 0.7s
+
+#11 [builder 1/5] FROM docker.io/library/python:3.10-buster@sha256:31a8498af27dba1f431f2df60189ca79ff5f440cfa7b6dea2da6ab15c74abcd4
+#11 sha256:3700b5076b92e3c178f7fcd2ec2c1e0183a67ff23aa4e01e44c808124e11ebe6
+#11 DONE 0.0s
+
+#4 [builder 2/5] WORKDIR /usr/src/app
+#4 sha256:38816e3f44ef48f96df535b9f1041b82fda9ca512fe443b8a7bf91c6b69ac74a
+#4 CACHED
+
+#5 [stage-1 3/4] RUN mkdir bin
+#5 sha256:8fc3c20091b849b98c367fdfc5dae1a4bf1963273d9997c7d241f0a3d79c2e8a
+#5 CACHED
+
+#10 [internal] load build context
+#10 sha256:08e56f3a60f034b4f123aac37acbf1ffd1d70be51e337057eb47eda97b76811b
+#10 transferring context: 3.45MB 0.1s done
+#10 DONE 0.1s
+
+#6 [builder 3/5] COPY cli@environment=linux_x86.pex cli.pex
+#6 sha256:ff388958c5f0e5adae727565895e14f2d817cfa55fdd2c8a376506ee28b5fc05
+#6 CACHED
+
+#7 [builder 4/5] RUN mkdir bin
+#7 sha256:1f7abacdea17c6c2f6006af571c3196f682fc25fd56378b1f511975b3bef4706
+#7 CACHED
+
+#8 [builder 5/5] RUN PEX_TOOLS=1 python cli.pex venv --compile ./bin/cli
+#8 sha256:cf565e6d588423756a32b7cef6266e00a0ca44a7fc222c97b7208b5ca8832d97
+#8 1.195 Failed to find compatible interpreter on path /usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin.
+#8 1.195 
+#8 1.195 Examined the following interpreters:
+#8 1.195 1.) /usr/local/bin/python3.10 CPython==3.10.12
+#8 1.195 2.)        /usr/bin/python2.7 CPython==2.7.16
+#8 1.195 3.)        /usr/bin/python3.7 CPython==3.7.3
+#8 1.195 
+#8 1.195 No interpreter compatible with the requested constraints was found:
+#8 1.195 
+#8 1.195   A distribution for sqlalchemy could not be resolved for /usr/local/bin/python3.10.
+#8 1.195   Found 1 distribution for sqlalchemy that do not apply:
+#8 1.195   1.) The wheel tags for SQLAlchemy 1.4.49 are cp310-cp310-manylinux_2_17_x86_64, cp310-cp310-manylinux1_x86_64, cp310-cp310-manylinux2014_x86_64, cp310-cp310-manylinux_2_5_x86_64 which do not match the supported tags of /usr/local/bin/python3.10:
+#8 1.195   cp310-cp310-manylinux_2_28_aarch64
+#8 1.195   ... 333 more ...
+#8 ERROR: executor failed running [/bin/sh -c PEX_TOOLS=1 python cli.pex venv --compile ./bin/cli]: exit code: 1
+------
+ > [builder 5/5] RUN PEX_TOOLS=1 python cli.pex venv --compile ./bin/cli:
+------
+executor failed running [/bin/sh -c PEX_TOOLS=1 python cli.pex venv --compile ./bin/cli]: exit code: 1
+
+
+
+Use `--keep-sandboxes=on_failure` to preserve the process chroot for inspection.
+
